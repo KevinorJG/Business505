@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <div class="card-container">
+                        <div class="card-image-container">
+                            <img src="../../../assets/icons/logo-business505.svg" alt="Tu Imagen"
+                                class="img-fluid card-image" />
+                        </div>
+                        <div>
+                            <h2>Formulario</h2>
+                            <form [formGroup]="this.contactForm">
+                                <div class="form-group">
+                                    <label for="nombre">Emprendimiento / Negocio:</label>
+                                    <input type="text" class="form-control" placeholder="Nombre" formControlName="name"
+                                        required />
+                                    <div *ngIf="contactForm.get('name').hasError('required') && contactForm.get('name').touched"
+                                        class="text-danger">Campo requerido
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="mensaje">Mensaje:</label>
+                                    <textarea class="form-control" rows="4" placeholder="Mensaje"
+                                        formControlName="message" required>
+                                    </textarea>
+                                    <div *ngIf="contactForm.get('message').hasError('required') && contactForm.get('message').touched"
+                                        class="text-danger">Campo requerido</div>
+                                </div>
+                                <div style="margin-top: 10px">
+                                    <button type="submit" class="btn btn-primary" [disabled]="!this.contactForm.valid" (click)="sendMessage()">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

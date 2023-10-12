@@ -1,0 +1,19 @@
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.card-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-image {
+  max-width: 100%;
+  height: auto;
+}
+.custom-card {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 100px;
+}

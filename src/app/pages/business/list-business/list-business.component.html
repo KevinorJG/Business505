@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="album py-5 bg-body-tertiary" >
+    <div class="container">      
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="margin-top: 50px;">           
+            <div class="col" *ngFor="let item of listBusiness">
+                <app-card-business 
+                [name]="item.name" 
+                [image]="item.image" 
+                [description]="item.description"
+                (click)="navBusinnes(item)">
+            </app-card-business>
+            </div>           
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

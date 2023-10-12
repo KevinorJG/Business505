@@ -1,0 +1,9 @@
+.modal-dialog {
+    min-width: 200px; /* Tamaño mínimo en ancho */
+    min-height: 200px; /* Tamaño mínimo en alto */
+  }
+  .modal-body img {
+    max-width: 100%;
+    height: auto;
+  }
+  

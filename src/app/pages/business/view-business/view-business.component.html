@@ -1,0 +1,42 @@
+<app-header></app-header>
+<main class="container" style="margin-top: 100px;">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis"
+        [style.background-image]="'url(' + this.infoBusiness.image + ')'" [style.background-size]="'cover'"
+        [style.background-position]="'center'" [style.min-height]="'500px'">
+        <div class="col-lg-6 px-0">
+            <h1 class="display-4" style="font-weight: 800; color: #f2b705;">{{ this.infoBusiness.name }}</h1>
+            <p class="lead my-3" style="font-weight: 400; color: white;">{{this.infoBusiness.description }}</p>
+
+        </div>
+        <p class="lead my-3" style="font-weight: 600; color: white;">
+            <i class="bi bi-geo-alt-fill">
+                {{ this.infoBusiness.address }}
+            </i>
+
+        </p>
+        <p class="lead my-3" style="font-weight: 600;" *ngFor="let item of infoBusiness.social">
+            <i class="nav-link bi bi-{{ item.name | lowercase }}" style=" cursor: pointer;" (click)="onClick(item.access,item.name)">
+                {{ item.access }}
+            </i>
+        </p>
+    </div>
+</main>
+
+<div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">Productos</h2>
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        <div class="col" *ngFor="let item of infoBusiness.products; let id = index">
+
+            <app-card-product [name]="item.name" [image]="item.image" data-bs-toggle="modal"
+                [attr.data-bs-target]="'#Modal-' + id"></app-card-product>
+
+            <app-modal-view-image [imgPreview]="item.image" [nameImg]="item.name"
+                [idModal]="'Modal-' + id"></app-modal-view-image>
+        </div>
+
+    </div>
+</div>
+<div class="floating-button " (click)="contact()">
+    <i class="bi bi-whatsapp"> Contactar</i>
+</div>
+<app-footer></app-footer>

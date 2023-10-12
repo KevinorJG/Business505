@@ -1,0 +1,14 @@
+<div class="card shadow-sms animation">
+    <div class="image-container"
+      [style.background]="'url(' + image + ')'"
+      [style.width.%]="100"
+      [style.height.px]="225"
+      [style.background-size]="'cover'">
+      <div class="name-overlay">
+        {{ name }}
+      </div>
+    </div>
+    <div class="card-body">
+      <p class="card-text" style="max-height: 90px; overflow: hidden; text-overflow: ellipsis; white-space: pre-line;">{{ description }}</p>
+    </div>
+  </div>

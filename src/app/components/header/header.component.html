@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+        <a class="navbar-brand" [routerLink]="['/inicio']">
+            <img src="../../../assets/icons/business505.svg" alt="Logo" width="87.6" height="46.16" class="d-inline-block align-text-top">
+           </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['/inicio']" [routerLinkActive]="['active']">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " [routerLink]="['/nosotros']" [routerLinkActive]="['active']" >Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/emprendimientos']" [routerLinkActive]="['active']">Emprendimientos  </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/contactanos']" [routerLinkActive]="['active']">Contactanos</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link bi bi-whatsapp" [href]="'https://api.whatsapp.com/send?phone=+505' + this.infoBlog.phone + '&text=' + 'Quisiera que me proporcionen más información.'"> Whatsapp</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

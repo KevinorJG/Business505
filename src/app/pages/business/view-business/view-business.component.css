@@ -1,0 +1,77 @@
+.feature-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+}
+
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+}
+
+.text-shadow-1 {
+  text-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+}
+.text-shadow-2 {
+  text-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+.text-shadow-3 {
+  text-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.card-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.feature-icon-small {
+  width: 3rem;
+  height: 3rem;
+}
+/* Cambia el color del icono a rojo */
+.bi.bi-geo-alt-fill::before {
+  color: red;
+}
+.bi.bi-instagram::before{
+    background: linear-gradient(to top, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    color: white;
+}
+.bi.bi-facebook::before{
+    color: rgb(59, 89, 152);
+}
+.bi.bi-whatsapp::before{
+    color: green;
+}
+.floating-button {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* Color de WhatsApp */
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  animation: floatingAnimation 2s ease infinite; /* Aplica una animación continua */
+}
+
+@keyframes floatingAnimation {
+  0%, 100% {
+    transform: translateY(0); /* Estado inicial y final */
+  }
+  50% {
+    transform: translateY(-5px); /* Estado intermedio */
+  }
+}
+
+.floating-button i {
+  font-size: 24px;
+  margin-right: 10px;
+  font-style: normal !important;
+}

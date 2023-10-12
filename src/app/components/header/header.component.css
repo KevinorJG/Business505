@@ -1,0 +1,39 @@
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+  color: #ffffff !important;
+  border-radius: 5px;
+  background-color: rgba(2, 8, 115, 0.7);
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link.show {
+    padding-left: 2%;
+  }
+}
+
+.navbar-nav .nav-item a.nav-link.bi-whatsapp {
+  color: green;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.navbar-nav .nav-item a.nav-link.bi-whatsapp:hover {
+  animation-name: zoomIn;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+.navbar-brand:hover {
+  animation-name: zoomIn;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
