@@ -1,0 +1,34 @@
+<app-header title="Blog"></app-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="this.blogForm">
+    <ion-grid fixed>
+      <ion-row class="ion-align-items-center ion-justify-content-center">
+        <ion-col size="12" sizeMd="6">
+          <img src="../../../assets/icon/business505.svg" class="img-card"/>
+        </ion-col>
+      </ion-row>
+      <ion-row>   
+        <ion-col sizeMd="6" size="12">
+          <ion-item fill="solid">
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input formControlName="email" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeMd="6" size="12">
+          <ion-item fill="solid">
+            <ion-label position="floating">Telefono</ion-label>
+            <ion-input formControlName="phone" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col sizeMd="6" size="12">
+          <ion-item fill="solid">
+            <ion-label position="floating">Direccion</ion-label>
+            <ion-textarea formControlName="address" rows="6"></ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+  </form>
+  
+</ion-content>

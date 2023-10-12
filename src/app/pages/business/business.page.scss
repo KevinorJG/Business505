@@ -1,0 +1,55 @@
+.profile-header {
+    text-align: center;
+    margin-top: 20px;
+  
+    .profile-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  ion-list {
+    margin-top: 20px;
+  }
+  
+  .profile-card {
+    --background: none; // Desactiva el fondo predeterminado del ion-card
+    background-color: aqua;
+    text-align: center; // Alinea el contenido al centro verticalmente
+  
+    img {
+      max-width: 100%; // Asegura que la imagen se ajuste al ancho de la tarjeta
+      height: auto; // Permite que la altura de la imagen se ajuste automáticamente
+    }
+  }
+  ion-card {
+    position: relative;
+  }
+  ion-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .card-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .card-overlay:hover {
+    display: inline;
+  }
+  

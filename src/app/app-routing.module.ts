@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'view-business',
+    loadChildren: () => import('./pages/view-business/view-business.module').then( m => m.ViewBusinessPageModule)
+  },
+  {
+    path: 'business/:id',
+    loadChildren: () => import('./pages/business/business.module').then( m => m.BusinessPageModule)
+  },
+  {
+    path: 'admin-blog',
+    loadChildren: () => import('./pages/admin-blog/admin-blog.module').then( m => m.AdminBlogPageModule)
+  },
 ];
 
 @NgModule({

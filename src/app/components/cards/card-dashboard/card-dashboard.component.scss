@@ -1,0 +1,10 @@
+ion-img img {
+    height: 90px;
+  }
+  
+  ion-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  

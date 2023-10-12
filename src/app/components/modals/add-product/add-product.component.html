@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="this.close()">
+        <ion-icon slot="icon-only" name="arrow-back" >Regresar</ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Agregar producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="this.productForm">
+<ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4">
+        <ion-card (click)="fileInput.click()">
+          <ion-img
+            [src]="function.getProcessedImage() ? function.getProcessedImage() : 'https://cdn3d.iconscout.com/3d/premium/thumb/product-5806313-4863042.png'"></ion-img>
+          <div class="card-overlay">
+            {{ function.getProcessedImage() ? 'Cambiar imagen' : 'Agregar una imagen' }}
+          </div>
+          <input type="file" accept="image/*" style="display: none" #fileInput (change)="function.processImage($event)" formControlName="image"/>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="8">
+        <ion-row>
+          <ion-col size="12">
+            <ion-item fill="solid">
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-input type="text" counterFormatter="counterFormatter" maxlength="19" formControlName="name"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            
+          </ion-col>
+          <ion-col size="12">
+            <ion-item fill="solid">
+              <ion-label position="floating">Precio base</ion-label>
+              <ion-input type="text" counterFormatter="counterFormatter" maxlength="19" formControlName="price"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>  
+    <ion-col size="12">
+    </ion-col>
+    <ion-col size="12">
+      <ion-button [disabled]="!this.productForm.valid" (click)="onClick()" expand="block" [color]="'success'" shape="round">
+        Guardar
+      </ion-button>
+    </ion-col>
+  </ion-grid>
+  </form>
+  
+</ion-content>

@@ -1,0 +1,41 @@
+<app-header title="Emprendimientos"></app-header>
+
+<ion-content [fullscreen]="true"> 
+  <ion-grid fixed>
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="12" sizeMd="6">
+        <ion-searchbar 
+        animated="true" 
+        placeholder="Emprendimiento" 
+        [debounce]="500" 
+        (ionInput)="handleInput($event)"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ng-container *ngIf="results.length === 0">
+        <ion-col size="12" sizeSm="3" *ngFor="let item of data">
+          <app-card-business
+            [name]="item.name"
+            [ImgSrc]="item.image"
+            (click)="this.viewBusiness(item)">
+          </app-card-business>
+        </ion-col>
+      </ng-container>
+        <ng-container *ngIf="results.length > 0">
+          <ion-col size="12" sizeSm="3" *ngFor="let item of results">
+            <app-card-business
+              [name]="item.name"
+              [ImgSrc]="item.image"
+              (click)="this.viewBusiness(item)">
+            </app-card-business>
+          </ion-col>
+        </ng-container>
+    </ion-row>
+  </ion-grid>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="this.addBusinnes()">
+      <ion-icon [name]="'add'"></ion-icon>  
+    </ion-fab-button>
+  </ion-fab>
+
+  </ion-content>

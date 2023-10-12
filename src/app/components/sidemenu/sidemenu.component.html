@@ -1,0 +1,17 @@
+<ion-menu contentId="main-content" type="overlay" swipeGesture="false">
+  <ion-content>
+    <ion-list id="inbox-list">
+      <ion-list-header style="padding-bottom: 50px;">
+        <img src="./../../../assets/icon/business505.svg" width="200" style="display: block; margin: 0 auto;"/> 
+        </ion-list-header>
+      <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+        <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none"  routerLinkActive="selected">
+          <ion-icon aria-hidden="true" slot="start" [ios]="p.icon +'-outline'" [md]="p.icon +'-sharp'"></ion-icon>
+          <ion-label>{{ p.title }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>    
+    </ion-list>
+  </ion-content>
+ 
+ 
+</ion-menu>

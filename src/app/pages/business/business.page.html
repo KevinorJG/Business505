@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="this.navCtrl.back()" slot="start">
+        <ion-icon slot="icon-only" name="arrow-back">Regresar</ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ business.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4">
+        <ion-card>
+          <ion-img [src]="business.image"></ion-img>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="6" size-lg="8">
+        <ion-row>
+          <ion-col size="12">
+            <ion-item fill="solid">
+              <ion-input type="text" label="Nombre del comercio" labelPlacement="stacked"
+                [value]="business.name"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-item fill="solid">
+              <ion-textarea label="Direccion" labelPlacement="stacked" rows="6"
+                [value]="business.address"></ion-textarea>
+            </ion-item>
+          </ion-col>
+          <ion-col size="12">
+            <ion-list>
+              <ion-item *ngFor="let social of business.social">
+                <ion-icon [name]="'logo-'+social.name" slot="start"></ion-icon>
+                <ion-label>{{ social.name }}</ion-label>
+                <ion-label slot="end">{{ social.access }}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-col size="12">
+      <ion-title>Productos</ion-title>
+      <ion-row>      
+        <ion-col size="6" sizeSm="3" *ngFor="let item of business.products">
+          <ion-card>
+            <ion-img [src]="item.image"></ion-img>
+          </ion-card>        
+        </ion-col>
+      </ion-row>
+    </ion-col>
+
+  </ion-grid>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="this.addProduct()">
+      <ion-icon [name]="'add'"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
